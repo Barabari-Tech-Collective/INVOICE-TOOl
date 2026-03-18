@@ -13,7 +13,8 @@ const app = express();
 app.use(cors({
      origin: [
       "http://localhost:5173",
-      "https://invoice-website-1.onrender.com"
+      "https://invoice-website-1.onrender.com",
+      "https://main.d2jrdble23ec0x.amplifyapp.com"
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
