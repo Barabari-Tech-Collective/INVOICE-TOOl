@@ -13,9 +13,13 @@ const app = express();
 app.use(cors({
      origin: [
       "http://localhost:5173",
-      "https://invoice-website-1.onrender.com",
       "https://main.d2jrdble23ec0x.amplifyapp.com"
     ],
+     if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type","Authorization"]
