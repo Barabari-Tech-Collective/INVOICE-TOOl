@@ -16,9 +16,10 @@ app.use(cors({
       "https://invoice-website-1.onrender.com"
     ],
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"]
-})
-);
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type","Authorization"]
+}));
+app.options("*",cors());
 app.use(express.json());
 
 app.use("/api/invoices", invoiceRoutes);
